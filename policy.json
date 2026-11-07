@@ -1,0 +1,13 @@
+{
+  "brute_count": 5,
+  "brute_seconds": 60,
+  "spray_accounts": 5,
+  "window_seconds": 120,
+  "cooldown_seconds": 120,
+  "working_start": 8,
+  "working_end": 18,
+  "failure_minimum": 10,
+  "failure_ratio": 0.8,
+  "denied_count": 5,
+  "telemetry_threshold": 90.0
+}

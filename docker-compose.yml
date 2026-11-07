@@ -1,0 +1,13 @@
+services:
+  sentinel:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      SENTINEL_DEMO: "1"
+      DEMO_PASSWORD: ${DEMO_PASSWORD:?Set a demo password of at least 12 characters}
+      DATABASE_URL: sqlite:////data/sentinel.db
+    volumes:
+      - sentinel-data:/data
+volumes:
+  sentinel-data:

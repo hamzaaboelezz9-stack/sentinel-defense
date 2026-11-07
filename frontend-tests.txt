@@ -1,0 +1,21 @@
+
+> sentinel-defense@1.0.0 test
+> vitest run
+
+
+ RUN  v5.1.0 /workspace/SENTINEL-DEFENSE/frontend
+
+
+ Test Files  2 passed (2)
+      Tests  27 passed (27)
+   Start at  16:55:44
+   Duration  1.11s (environment 67%, setup 13%, tests 10%, import 6%, transform 3%, worker 1%)
+
+    Isolate  2 workers spawned · ~395ms startup each (spawn + environment, per file)
+             at least ~395ms faster with isolate: false — reuses workers across files instead of one per file
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

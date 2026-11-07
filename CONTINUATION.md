@@ -1,0 +1,6 @@
+# Maintenance and operational-extension roadmap
+The preview's core continuation items are now implemented in 1.0: normalized tables, preserved migration, rolling policies, durable sessions, source-indexed replay, event-derived model features, specialized playbooks, richer reports, evidence fingerprints, retention/restore, modular frontend services/components, React Router, Recharts, Vitest, dependency scans, Docker runtime, and PostgreSQL validation.
+
+The remaining execution boundaries are Windows-native launching, the remote CI run, managed-browser direct-file policy, and full Compose orchestration. These are marked NOT TESTED in acceptance; individual Docker/PostgreSQL/SQLite/API paths were run. Optional Arabic/RTL, light theme, and an external language-model integration were not selected for the maintained release.
+
+For future operational work, first replace process-level mutation/rate coordination with a reviewed database/shared limiter design, then add bounded retention/checkpointed replay, external evidence custody, and representative validation. Do not connect the educational platform to operational networks as a shortcut. The source remains a maintainable modular monolith; no microservices are required for this portfolio scale.

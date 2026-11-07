@@ -1,0 +1,14 @@
+# Release boundaries and genuine limitations
+- This release is a defensive educational portfolio system using fictional assets and synthetic data, not an operational or military system. No certification or endorsement is claimed.
+- Statistical metrics depend on the synthetic scenario distribution. Training uses normal training windows; calibration and held-out seeds are independent. There is no representative operational-data validation. An anomaly does not prove malicious activity.
+- Browser mode recomputes statistical metrics from packaged held-out features and scores current incident evidence. Python model training and Isolation Forest evaluation require connected mode; packaged comparison results identify their source.
+- Default serving is one process. Mutation coordination and rate counters are per process. Sessions persist in SQL, but a multi-worker ingestion service needs stronger database coordination and shared rate limiting before deployment.
+- Source/asset replay handles late arrivals and is indexed/grouped, but cost grows with retained source history. The 10,000-event benchmark is a local TestClient measurement, not a distributed load or uptime guarantee.
+- Audit/event hashes are local tamper evidence. They cannot prove custody against an administrator rewriting the complete database. No remote timestamp authority or immutable external evidence vault is implemented.
+- Device health is inferred only from synthetic telemetry. Missing telemetry is labeled as missing, not healthy. No operational equipment is contacted.
+- Windows batch launching is provided with helpful checks, but no Windows host was available for local execution. GitHub Actions, including its Windows job, is configured but not remotely executed; no passing CI badge is claimed.
+- Managed Chrome blocks direct file:// navigation. The embedded offline bundle was tested over localhost while blocking API requests; double-click behavior on a user's browser remains unverified under their policy.
+- Docker build and runtime, PostgreSQL 17, SQLite persistence, migration/rollback, backup/restore, and connected/offline browser workflows were executed. Full Compose orchestration is supplied; its configuration is checked separately from the individual runtime smoke tests.
+- English is the release language. Arabic/RTL and a light theme were optional in the brief and are not included. The dark responsive interface is the maintained theme.
+- The optional external language-model integration is intentionally absent. Deterministic versioned playbooks work without API keys and cannot execute disruptive actions.
+- Independent security review, deployment TLS/secrets policy, representative validation, privacy review, and operational reliability engineering would be required before use beyond the controlled fictional lab.

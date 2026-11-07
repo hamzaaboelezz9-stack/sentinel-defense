@@ -1,0 +1,32 @@
+name: Sentinel release checks
+on: [push, pull_request]
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r backend/requirements.lock ruff pip-audit
+      - run: python -m pytest backend/tests --cov=backend.app --junitxml=reports/pytest.xml
+      - run: ruff check backend scripts
+      - run: pip-audit --disable-pip --no-deps -r backend/requirements.lock
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci && npm run build && npm test && npm audit
+        working-directory: frontend
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r backend/requirements.lock
+      - run: python -m pytest backend/tests -q

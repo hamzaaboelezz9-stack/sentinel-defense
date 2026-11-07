@@ -1,0 +1,7 @@
+[tool.ruff]
+target-version = "py312"
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "B"]
+ignore = ["B008"] # FastAPI dependency declarations are intentional.
+[tool.pytest.ini_options]
+testpaths = ["backend/tests"]

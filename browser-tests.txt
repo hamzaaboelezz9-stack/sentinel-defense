@@ -1,0 +1,1 @@
+PASS: connected login, generation, investigation save, AI evaluation, screenshot; offline generation, persistence, mobile layout; no JS errors.

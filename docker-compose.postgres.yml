@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: sentinel
+      POSTGRES_USER: sentinel
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set a URL-safe database password}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sentinel -d sentinel"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  sentinel:
+    build: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      SENTINEL_DEMO: "1"
+      DEMO_PASSWORD: ${DEMO_PASSWORD:?Set a demo password of at least 12 characters}
+      DATABASE_URL: postgresql+psycopg://sentinel:${POSTGRES_PASSWORD}@postgres:5432/sentinel
+volumes:
+  postgres-data:

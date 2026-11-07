@@ -1,0 +1,106 @@
+{
+  "brute_force": [
+    "Repeated authentication failures",
+    "Check service retry loops, typing errors, and authorized tests.",
+    [
+      "Inspect source/account timestamps",
+      "Compare failed and successful authentications",
+      "Verify expected service credentials"
+    ],
+    [
+      "Recommend review of source access policy",
+      "Require approval before any real account/access change"
+    ]
+  ],
+  "password_spray": [
+    "Many accounts targeted",
+    "A misconfigured identity integration may target many users.",
+    [
+      "List distinct target accounts",
+      "Check approved identity integration jobs",
+      "Look for shared source infrastructure"
+    ],
+    [
+      "Recommend identity policy review",
+      "Consider supervised additional verification"
+    ]
+  ],
+  "disabled_account": [
+    "Disabled account authenticated",
+    "Account-state synchronization or stale fictional flags may be responsible.",
+    [
+      "Verify disabled status at event time",
+      "Review identity synchronization records",
+      "Identify the fictional account owner"
+    ],
+    [
+      "Recommend supervised session review",
+      "Escalate identity-state inconsistency"
+    ]
+  ],
+  "unusual_time": [
+    "Off-hours authentication",
+    "Shift work or approved maintenance can explain the event.",
+    [
+      "Check approved work schedule and UTC conversion",
+      "Contact fictional account owner",
+      "Compare previous login times"
+    ],
+    [
+      "Recommend additional identity verification",
+      "Avoid unnecessary interruption without corroboration"
+    ]
+  ],
+  "failure_ratio": [
+    "Unusual failure ratio",
+    "An identity service outage could cause benign failures.",
+    [
+      "Compare failure counts with total volume",
+      "Review fictional identity service health",
+      "Check planned testing"
+    ],
+    [
+      "Recommend investigation of service availability",
+      "Coordinate any changes with the service owner"
+    ]
+  ],
+  "access_denied": [
+    "Repeated authorization denials",
+    "Application permission drift may cause repeated denied reads.",
+    [
+      "Inspect requested fictional resource",
+      "Check expected authorization scope",
+      "Review application error loops"
+    ],
+    [
+      "Recommend least-privilege policy review",
+      "Require an approved change before permission modification"
+    ]
+  ],
+  "configuration_change": [
+    "Unexpected configuration change",
+    "Authorized maintenance may be missing from the change calendar.",
+    [
+      "Compare approved fictional change tickets",
+      "Inspect configuration-change evidence",
+      "Identify administrator and asset owner"
+    ],
+    [
+      "Recommend preserving configuration snapshots",
+      "Require approval before any rollback"
+    ]
+  ],
+  "device_health": [
+    "Simulated device health anomaly",
+    "Sensor noise or simulator calibration may explain telemetry.",
+    [
+      "Inspect synthetic telemetry trend",
+      "Check sensor units and calibration",
+      "Compare neighboring simulated assets"
+    ],
+    [
+      "Recommend maintenance review",
+      "Do not isolate industrial equipment automatically"
+    ]
+  ]
+}

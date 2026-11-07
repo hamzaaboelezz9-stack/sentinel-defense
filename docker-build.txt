@@ -1,0 +1,182 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 866B done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.4s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/python:3.12-slim
+#4 DONE 0.4s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 127B done
+#5 DONE 0.0s
+
+#6 [stage-0 1/5] FROM docker.io/library/python:3.12-slim@sha256:4840d514c583a4d3d8cad3940e68dee6f0f6f3635c12fcd0a3d74c21a5b93a54
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 798.47kB 0.0s done
+#7 DONE 0.0s
+
+#8 [stage-0 2/5] WORKDIR /app
+#8 CACHED
+
+#9 [stage-0 3/5] COPY backend/ backend/
+#9 DONE 0.4s
+
+#10 [stage-0 4/5] COPY frontend/dist/ frontend/dist/
+#10 DONE 0.2s
+
+#11 [stage-0 5/5] RUN --mount=type=secret,id=proxy_ca,required=false     if [ -f /run/secrets/proxy_ca ]; then PIP_CERT=/run/secrets/proxy_ca pip install --no-cache-dir -r backend/requirements.lock; else pip install --no-cache-dir -r backend/requirements.lock; fi     && useradd -m sentinel && mkdir /data && chown -R sentinel:sentinel /app /data
+#11 1.927 Collecting alembic==1.20.1 (from -r backend/requirements.lock (line 1))
+#11 1.996   Downloading alembic-1.20.1-py3-none-any.whl.metadata (7.3 kB)
+#11 2.088 Collecting annotated-doc==0.0.5 (from -r backend/requirements.lock (line 2))
+#11 2.111   Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+#11 2.173 Collecting annotated-types==0.8.0 (from -r backend/requirements.lock (line 3))
+#11 2.198   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+#11 2.243 Collecting anyio==4.14.2 (from -r backend/requirements.lock (line 4))
+#11 2.270   Downloading anyio-4.14.2-py3-none-any.whl.metadata (4.6 kB)
+#11 2.328 Collecting argon2-cffi==25.1.0 (from -r backend/requirements.lock (line 5))
+#11 2.353   Downloading argon2_cffi-25.1.0-py3-none-any.whl.metadata (4.1 kB)
+#11 2.387 Collecting argon2-cffi-bindings==26.1.0 (from -r backend/requirements.lock (line 6))
+#11 2.414   Downloading argon2_cffi_bindings-26.1.0-cp310-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (7.5 kB)
+#11 2.445 Collecting certifi==2026.10.19 (from -r backend/requirements.lock (line 7))
+#11 2.478   Downloading certifi-2026.10.19-py3-none-any.whl.metadata (2.5 kB)
+#11 2.651 Collecting cffi==2.1.1 (from -r backend/requirements.lock (line 8))
+#11 2.674   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+#11 2.816 Collecting charset-normalizer==3.5.2 (from -r backend/requirements.lock (line 9))
+#11 2.839   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+#11 2.874 Collecting click==8.4.2 (from -r backend/requirements.lock (line 10))
+#11 2.896   Downloading click-8.4.2-py3-none-any.whl.metadata (2.6 kB)
+#11 3.217 Collecting coverage==7.17.2 (from -r backend/requirements.lock (line 11))
+#11 3.240   Downloading coverage-7.17.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (8.1 kB)
+#11 3.304 Collecting fastapi==0.141.1 (from -r backend/requirements.lock (line 12))
+#11 3.330   Downloading fastapi-0.141.1-py3-none-any.whl.metadata (27 kB)
+#11 3.360 Collecting h11==0.16.0 (from -r backend/requirements.lock (line 13))
+#11 3.387   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+#11 3.417 Collecting httpcore==1.0.9 (from -r backend/requirements.lock (line 14))
+#11 3.443   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+#11 3.482 Collecting httpx==0.28.1 (from -r backend/requirements.lock (line 15))
+#11 3.506   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+#11 3.536 Collecting idna==3.18 (from -r backend/requirements.lock (line 16))
+#11 3.562   Downloading idna-3.18-py3-none-any.whl.metadata (6.1 kB)
+#11 3.591 Collecting iniconfig==2.3.1 (from -r backend/requirements.lock (line 17))
+#11 3.616   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+#11 3.697 Collecting joblib==1.5.3 (from -r backend/requirements.lock (line 18))
+#11 3.725   Downloading joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+#11 3.761 Collecting Mako==1.4.3 (from -r backend/requirements.lock (line 19))
+#11 3.785   Downloading mako-1.4.3-py3-none-any.whl.metadata (2.9 kB)
+#11 3.905 Collecting MarkupSafe==3.0.4 (from -r backend/requirements.lock (line 20))
+#11 3.938   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+#11 4.122 Collecting numpy==2.3.5 (from -r backend/requirements.lock (line 21))
+#11 4.162   Downloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+#11 4.215 Collecting packaging==26.3 (from -r backend/requirements.lock (line 22))
+#11 4.243   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+#11 4.394 Collecting pillow==13.0.0 (from -r backend/requirements.lock (line 23))
+#11 4.417   Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+#11 4.450 Collecting pluggy==1.7.0 (from -r backend/requirements.lock (line 24))
+#11 4.476   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+#11 4.509 Collecting psycopg==3.3.8 (from -r backend/requirements.lock (line 25))
+#11 4.529   Downloading psycopg-3.3.8-py3-none-any.whl.metadata (4.4 kB)
+#11 4.679 Collecting psycopg-binary==3.3.8 (from -r backend/requirements.lock (line 26))
+#11 4.705   Downloading psycopg_binary-3.3.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.7 kB)
+#11 4.740 Collecting pycparser==3.0 (from -r backend/requirements.lock (line 27))
+#11 4.765   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+#11 4.957 Collecting pydantic==2.13.4 (from -r backend/requirements.lock (line 28))
+#11 4.983   Downloading pydantic-2.13.4-py3-none-any.whl.metadata (109 kB)
+#11 5.662 Collecting pydantic_core==2.46.4 (from -r backend/requirements.lock (line 29))
+#11 5.688   Downloading pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+#11 5.725 Collecting Pygments==2.21.0 (from -r backend/requirements.lock (line 30))
+#11 5.746   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+#11 5.805 Collecting pytest==9.2.0 (from -r backend/requirements.lock (line 31))
+#11 5.829   Downloading pytest-9.2.0-py3-none-any.whl.metadata (7.9 kB)
+#11 5.870 Collecting pytest-cov==7.1.0 (from -r backend/requirements.lock (line 32))
+#11 5.900   Downloading pytest_cov-7.1.0-py3-none-any.whl.metadata (32 kB)
+#11 6.021 Collecting reportlab==4.4.9 (from -r backend/requirements.lock (line 33))
+#11 6.046   Downloading reportlab-4.4.9-py3-none-any.whl.metadata (1.7 kB)
+#11 6.137 Collecting scikit-learn==1.8.0 (from -r backend/requirements.lock (line 34))
+#11 6.166   Downloading scikit_learn-1.8.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+#11 6.315 Collecting scipy==1.17.0 (from -r backend/requirements.lock (line 35))
+#11 6.338   Downloading scipy-1.17.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+#11 6.708 Collecting SQLAlchemy==2.1.8 (from -r backend/requirements.lock (line 36))
+#11 6.737   Downloading sqlalchemy-2.1.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (9.7 kB)
+#11 6.794 Collecting starlette==1.6.0 (from -r backend/requirements.lock (line 37))
+#11 6.818   Downloading starlette-1.6.0-py3-none-any.whl.metadata (6.4 kB)
+#11 6.846 Collecting threadpoolctl==3.6.0 (from -r backend/requirements.lock (line 38))
+#11 6.870   Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+#11 6.901 Collecting typing-inspection==0.4.3 (from -r backend/requirements.lock (line 39))
+#11 6.931   Downloading typing_inspection-0.4.3-py3-none-any.whl.metadata (2.6 kB)
+#11 6.963 Collecting typing_extensions==4.16.0 (from -r backend/requirements.lock (line 40))
+#11 6.987   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#11 7.032 Collecting uvicorn==0.52.1 (from -r backend/requirements.lock (line 41))
+#11 7.067   Downloading uvicorn-0.52.1-py3-none-any.whl.metadata (6.6 kB)
+#11 7.266 Downloading alembic-1.20.1-py3-none-any.whl (270 kB)
+#11 7.297 Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+#11 7.321 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#11 7.342 Downloading anyio-4.14.2-py3-none-any.whl (125 kB)
+#11 7.369 Downloading argon2_cffi-25.1.0-py3-none-any.whl (14 kB)
+#11 7.395 Downloading argon2_cffi_bindings-26.1.0-cp310-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (26 kB)
+#11 7.426 Downloading certifi-2026.10.19-py3-none-any.whl (136 kB)
+#11 7.458 Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+#11 7.481 Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+#11 7.512 Downloading click-8.4.2-py3-none-any.whl (119 kB)
+#11 7.537 Downloading coverage-7.17.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (263 kB)
+#11 7.559 Downloading fastapi-0.141.1-py3-none-any.whl (131 kB)
+#11 7.584 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#11 7.609 Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+#11 7.632 Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+#11 7.657 Downloading idna-3.18-py3-none-any.whl (65 kB)
+#11 7.679 Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+#11 7.703 Downloading joblib-1.5.3-py3-none-any.whl (309 kB)
+#11 7.731 Downloading mako-1.4.3-py3-none-any.whl (80 kB)
+#11 7.753 Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+#11 7.780 Downloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+#11 8.089    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 53.7 MB/s eta 0:00:00
+#11 8.114 Downloading packaging-26.3-py3-none-any.whl (129 kB)
+#11 8.135 Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+#11 8.269    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 54.6 MB/s eta 0:00:00
+#11 8.292 Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+#11 8.319 Downloading psycopg-3.3.8-py3-none-any.whl (216 kB)
+#11 8.348 Downloading psycopg_binary-3.3.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.2 MB)
+#11 8.459    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 49.7 MB/s eta 0:00:00
+#11 8.485 Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+#11 8.506 Downloading pydantic-2.13.4-py3-none-any.whl (472 kB)
+#11 8.547 Downloading pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+#11 8.590    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 50.7 MB/s eta 0:00:00
+#11 8.615 Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+#11 8.642    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 49.4 MB/s eta 0:00:00
+#11 8.664 Downloading pytest-9.2.0-py3-none-any.whl (411 kB)
+#11 8.693 Downloading pytest_cov-7.1.0-py3-none-any.whl (22 kB)
+#11 8.716 Downloading reportlab-4.4.9-py3-none-any.whl (2.0 MB)
+#11 8.750    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 57.9 MB/s eta 0:00:00
+#11 8.776 Downloading scikit_learn-1.8.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (8.9 MB)
+#11 8.948    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.9/8.9 MB 53.5 MB/s eta 0:00:00
+#11 8.970 Downloading scipy-1.17.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.0 MB)
+#11 9.665    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.0/35.0 MB 50.6 MB/s eta 0:00:00
+#11 9.688 Downloading sqlalchemy-2.1.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.7 MB)
+#11 9.783    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 51.1 MB/s eta 0:00:00
+#11 9.809 Downloading starlette-1.6.0-py3-none-any.whl (75 kB)
+#11 9.841 Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+#11 9.864 Downloading typing_inspection-0.4.3-py3-none-any.whl (14 kB)
+#11 9.890 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#11 9.911 Downloading uvicorn-0.52.1-py3-none-any.whl (79 kB)
+#11 10.13 Installing collected packages: typing_extensions, threadpoolctl, Pygments, pycparser, psycopg-binary, pluggy, pillow, packaging, numpy, MarkupSafe, joblib, iniconfig, idna, h11, coverage, click, charset-normalizer, certifi, annotated-types, annotated-doc, uvicorn, typing-inspection, SQLAlchemy, scipy, reportlab, pytest, pydantic_core, psycopg, Mako, httpcore, cffi, anyio, starlette, scikit-learn, pytest-cov, pydantic, httpx, argon2-cffi-bindings, alembic, fastapi, argon2-cffi
+#11 21.69 Successfully installed Mako-1.4.3 MarkupSafe-3.0.4 Pygments-2.21.0 SQLAlchemy-2.1.8 alembic-1.20.1 annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.14.2 argon2-cffi-25.1.0 argon2-cffi-bindings-26.1.0 certifi-2026.10.19 cffi-2.1.1 charset-normalizer-3.5.2 click-8.4.2 coverage-7.17.2 fastapi-0.141.1 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.18 iniconfig-2.3.1 joblib-1.5.3 numpy-2.3.5 packaging-26.3 pillow-13.0.0 pluggy-1.7.0 psycopg-3.3.8 psycopg-binary-3.3.8 pycparser-3.0 pydantic-2.13.4 pydantic_core-2.46.4 pytest-9.2.0 pytest-cov-7.1.0 reportlab-4.4.9 scikit-learn-1.8.0 scipy-1.17.0 starlette-1.6.0 threadpoolctl-3.6.0 typing-inspection-0.4.3 typing_extensions-4.16.0 uvicorn-0.52.1
+#11 21.69 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#11 21.82 
+#11 21.82 [notice] A new release of pip is available: 25.0.1 -> 26.3
+#11 21.82 [notice] To update, run: pip install --upgrade pip
+#11 DONE 22.1s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.4s done
+#12 writing image sha256:d67a027f34a7dc5ec9479e18b25822da2c31b066be57488eb3ccba78b4cf76e9 done
+#12 naming to docker.io/library/sentinel-defense:1.0.0 done
+#12 DONE 1.4s

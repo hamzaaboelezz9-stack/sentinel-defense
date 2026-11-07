@@ -1,0 +1,1 @@
+PASS: release Docker image builds and runs; loopback HTTP, auth/RBAC, normalized SQLite ingestion, correlation, integrity, PDF, and built frontend verified.

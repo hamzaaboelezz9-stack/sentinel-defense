@@ -1,0 +1,74 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-11-07T16:58:04.737764+00:00",
+  "checks": {
+    "backend_tests": {
+      "status": "PASS",
+      "count": 25
+    },
+    "frontend_tests": {
+      "status": "PASS",
+      "count": 27
+    },
+    "frontend_build": {
+      "status": "PASS"
+    },
+    "browser_workflows": {
+      "status": "PASS",
+      "scope": "Connected and browser-local via localhost; direct file blocked by policy"
+    },
+    "ruff": {
+      "status": "PASS"
+    },
+    "postgresql_17": {
+      "status": "PASS"
+    },
+    "docker_build_runtime": {
+      "status": "PASS"
+    },
+    "compose_config": {
+      "status": "PASS",
+      "orchestration": "NOT TESTED"
+    },
+    "windows_execution": {
+      "status": "NOT TESTED"
+    },
+    "remote_github_actions": {
+      "status": "NOT TESTED"
+    },
+    "npm_audit": {
+      "status": "PASS",
+      "known_advisories": 0
+    },
+    "pip_audit": {
+      "status": "PASS",
+      "known_advisories": 0
+    }
+  },
+  "benchmark": {
+    "environment": "FastAPI TestClient, local SQLite, single process; not a network/load test",
+    "batch_size": 1000,
+    "total_events": 10000,
+    "ingestion_seconds": 4.12634277100733,
+    "events_per_second": 2423.45354105393,
+    "query_median_seconds": 0.26650240900198696,
+    "query_samples": 10
+  },
+  "evidence": {
+    "browser-tests.txt": "556c148cf798fbbf2c4a91e33f67ad800be8d315ba32913b8338047ca3de86fc",
+    "pip-audit.json": "f9c5b6649f5c040c4870438e061b05a202f83eb37b1b23f5c4d4da9935b29d41",
+    "frontend-build.txt": "ca054d3920467971ceb2ed9822f379cfbd7d84236342ca2246b913e65e7d14ff",
+    "pytest.xml": "d066528ccc7a4528b2ee71dc4309424148187ebc0b6fb05cd65d066345c5a844",
+    "ruff.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "benchmark-run.txt": "22b0c276610f5c92f9f3aeaa948f843b54fbe46389db9a2000741a00f5227a41",
+    "npm-audit.json": "ec7652ec3790f10f8cf4ffc7883d435dbe7d389dfe1f99c93258da826a770041",
+    "backend-tests.txt": "82ed1abf0138ce72efce4c06c5c3e860a5fbb2df079eb0cda900f203b6faa72b",
+    "postgres-tests.txt": "975ff1554287015fad5c67a238b59486c333631185f3d90f1c8914662beb02ed",
+    "frontend-tests.txt": "b41526d001ec8f065d10ebe7a637ae9572d80f0573115c664676c2905f0fd759",
+    "docker-build.txt": "01694ddae4da4000a1634ebb213a62f9277716e73200d68bddfe7916e4002359",
+    "docker-tests.txt": "a78c106c64069f0f6acc7de9b14d558ccc867cfbb12824ccb8c62ea4186bfd70",
+    "upgrade-tests.txt": "44426189532679d2bf469324a15c129158485d216d9e61eff1a36d6f77227768",
+    "benchmark.json": "1650fee454b389a0ccb803db18d957e5a5e1ab811970481c99d1ebf80568641e",
+    "compose-tests.txt": "d859733d4612551b499f573dc9b30111b13b9c5105eea881555c2c2589cfbdeb"
+  }
+}
